@@ -84,6 +84,12 @@ usuário.
 
 ------------------------------------------------------------------------
 
+## 🔗 Ver Projeto Online
+
+[🔗 Ver Projeto Online](https://gabriellgava.github.io/Project-Space-Tourism/)
+
+------------------------------------------------------------------------
+
 ## 🚀 Aprendizados
 
 -   Manipulação de conteúdo dinâmico\
@@ -100,7 +106,6 @@ usuário.
 -   Implementar transições mais suaves\
 -   Otimização de performance\
 -   Melhorias de acessibilidade\
--   Deploy online
 
 ------------------------------------------------------------------------
 
