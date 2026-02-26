@@ -1,0 +1,208 @@
+/* =======================================
+   COMPONENTS — Botão, Tabs, Dots, Números
+======================================= */
+
+/* ===== BOTÃO EXPLORE ===== */
+.btn-explore {
+  width: 150px;
+  height: 150px;
+  background: var(--white);
+  color: var(--dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-serif);
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  position: relative;
+  transition: box-shadow 0.5s ease, transform 0.3s ease;
+}
+
+.btn-explore:hover {
+  box-shadow: 0 0 0 44px rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
+}
+
+@media (min-width: 768px) {
+  .btn-explore {
+    width: 242px;
+    height: 242px;
+    font-size: 2rem;
+    letter-spacing: 4px;
+  }
+
+  .btn-explore:hover {
+    box-shadow: 0 0 0 70px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn-explore {
+    width: 274px;
+    height: 274px;
+  }
+
+  .btn-explore:hover {
+    box-shadow: 0 0 0 88px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ===== PAGE TITLE ===== */
+.page-title {
+  font-family: var(--ff-sans-cond);
+  font-size: var(--fs-300);
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-title span {
+  margin-right: 1rem;
+  font-weight: 700;
+  opacity: 0.25;
+}
+
+@media (min-width: 768px) {
+  .page-title {
+    text-align: left;
+    font-size: var(--fs-500);
+    letter-spacing: 3.4px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-title {
+    font-size: 1.75rem;
+    letter-spacing: 4.7px;
+  }
+}
+
+/* ===== TABS TEXT (Destination) ===== */
+.tabs-text {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tabs-text button {
+  background: none;
+  border: none;
+  color: var(--light);
+  font-family: var(--ff-sans-cond);
+  font-size: var(--fs-300);
+  letter-spacing: 2.36px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+}
+
+.tabs-text button:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.tabs-text button.active {
+  color: var(--white);
+  border-bottom-color: var(--white);
+}
+
+@media (min-width: 1024px) {
+  .tabs-text {
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
+  .tabs-text button {
+    font-size: 1rem;
+    letter-spacing: 2.7px;
+  }
+}
+
+/* ===== TABS DOTS (Crew) ===== */
+.tabs-dots {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.tabs-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.17);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  padding: 0;
+}
+
+.tabs-dots .dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.tabs-dots .dot.active {
+  background: var(--white);
+}
+
+@media (min-width: 1024px) {
+  .tabs-dots {
+    justify-content: flex-start;
+    margin-top: 2.5rem;
+  }
+
+  .tabs-dots .dot {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* ===== TABS NUMBERS (Technology) ===== */
+.tabs-numbers {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tabs-numbers button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: var(--white);
+  font-family: var(--ff-serif);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tabs-numbers button:hover {
+  border-color: var(--white);
+}
+
+.tabs-numbers button.active {
+  background: var(--white);
+  color: var(--dark);
+  border-color: var(--white);
+}
+
+@media (min-width: 1024px) {
+  .tabs-numbers {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 0;
+  }
+
+  .tabs-numbers button {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+}

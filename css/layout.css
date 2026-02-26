@@ -1,0 +1,270 @@
+/* =======================================
+   LAYOUT — Header, Menu, Conteúdo
+======================================= */
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Logo */
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Linha decorativa (desktop) */
+.header-line {
+  display: none;
+}
+
+/* Menu hamburguer */
+#menu-toggle {
+  display: none;
+}
+
+.open-menu {
+  cursor: pointer;
+  z-index: 100;
+}
+
+.open-menu img {
+  width: 24px;
+  height: 21px;
+}
+
+.close-menu {
+  cursor: pointer;
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+}
+
+.close-menu img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Menu lateral mobile */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 65%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  padding: 6rem 2rem 2rem;
+  transition: right 0.4s ease;
+  z-index: 999;
+}
+
+#menu-toggle:checked~.header .menu {
+  right: 0;
+}
+
+/* Lista do menu */
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.menu li {
+  padding: 1rem 0;
+  cursor: pointer;
+  font-family: var(--ff-sans-cond);
+  font-size: var(--fs-300);
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  border-right: 3px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.menu li:hover {
+  border-right-color: rgba(255, 255, 255, 0.5);
+}
+
+.menu li.active {
+  border-right-color: var(--white);
+}
+
+.menu li span {
+  margin-right: 0.75rem;
+  font-weight: 700;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.conteudo {
+  flex: 1;
+  padding: 0 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Textos da Home */
+.conteudo_texto {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.conteudo_texto_suptitulo {
+  font-family: var(--ff-sans-cond);
+  font-weight: 400;
+  font-size: var(--fs-300);
+  letter-spacing: 2.7px;
+  color: var(--light);
+  margin-bottom: 1rem;
+}
+
+.conteudo_texto_titulo {
+  font-family: var(--ff-serif);
+  font-weight: 400;
+  font-size: var(--fs-900);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.conteudo_texto_descricao {
+  font-size: var(--fs-400);
+  line-height: 1.7;
+  color: var(--light);
+  max-width: 50ch;
+  margin: 0 auto;
+}
+
+.conteudo_botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin-top: 2rem;
+}
+
+/* ===== TABLET (768px+) ===== */
+@media (min-width: 768px) {
+  .header {
+    padding: 0;
+    padding-left: 2.5rem;
+  }
+
+  .logo-img {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Esconde hamburguer, mostra menu horizontal */
+  .open-menu,
+  .close-menu {
+    display: none;
+  }
+
+  .menu {
+    position: relative;
+    right: 0;
+    width: auto;
+    height: auto;
+    padding: 0 3rem;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+  }
+
+  .menu ul {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .menu li {
+    padding: 2.25rem 0;
+    border-right: none;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+  }
+
+  .menu li:hover {
+    border-right-color: transparent;
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .menu li.active {
+    border-right-color: transparent;
+    border-bottom-color: var(--white);
+  }
+
+  .menu li span {
+    display: none;
+  }
+
+  .conteudo {
+    padding: 0 2.5rem 3rem;
+  }
+
+  .conteudo_texto {
+    margin-top: 2.5rem;
+  }
+
+  .conteudo_texto_suptitulo {
+    font-size: var(--fs-500);
+    letter-spacing: 3.4px;
+  }
+}
+
+/* ===== DESKTOP (1024px+) ===== */
+@media (min-width: 1024px) {
+  .header {
+    padding-top: 2.5rem;
+  }
+
+  /* Linha decorativa */
+  .header-line {
+    display: block;
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.25);
+    margin: 0 -1.5rem 0 3rem;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .menu {
+    padding: 0 10rem 0 5rem;
+  }
+
+  .menu li span {
+    display: inline;
+  }
+
+  .conteudo {
+    padding: 0 10rem 4rem;
+  }
+
+  /* HOME — texto esquerda, botão direita */
+  .home {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: left;
+    padding-bottom: 4rem;
+  }
+
+  .home .conteudo_texto {
+    max-width: 450px;
+    text-align: left;
+  }
+
+  .home .conteudo_texto_descricao {
+    margin: 0;
+  }
+
+  .home .conteudo_botao {
+    margin-top: 0;
+    flex: 0;
+  }
+}
